@@ -15,7 +15,7 @@ import android.view.View;
 
 import java.util.ArrayList;
 
-import static android.graphics.Canvas.CLIP_SAVE_FLAG;
+import static android.graphics.Canvas.ALL_SAVE_FLAG;
 
 /**
  * RatingStar is specific RatingBar use star drawable as the progress mark.
@@ -360,7 +360,7 @@ public class RatingStarView extends View implements View.OnClickListener {
 
         // layer 2
         RectF r = star.getOuterRect();
-        canvas.saveLayerAlpha(r.left, r.top, r.right, r.bottom, 0xff, CLIP_SAVE_FLAG);
+        canvas.saveLayerAlpha(r.left, r.top, r.right, r.bottom, 0xff, ALL_SAVE_FLAG);
         RectF clip = new RectF(star.getOuterRect());
         clip.right = dividerX;
         canvas.clipRect(clip);
